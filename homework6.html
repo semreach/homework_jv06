@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework6</title>
+</head>
+<style>
+    .container {
+        width: 400px;
+        height: 300px;
+        margin: auto;
+        background-color: grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        /* box-shadow: 2px 2px 2px black; */
+        border: 5px solid red;
+    }
+
+    .big-box {
+        width: 100px;
+        height: 50px;
+        background-color: white;
+        border-radius: 30px;
+        display: flex;
+    }
+
+    .small-box {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 30px;
+        /* transform: translateX(50px); */
+        transition: all 0.5s ease-in-out;
+    }
+    .small-box:hover {
+        cursor: pointer;
+    }
+    .container h3 {
+        
+        text-align: center;
+        color: red;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        font-weight: bold;
+        margin-right: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h3 class="title">Red</h3>
+        <div class="big-box">
+            <div class="small-box">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const smallBox = document.querySelector('.small-box');
+    const containers = document.querySelector('.container');
+    const title = document.querySelector('.title');
+
+    let isMoved = false;
+
+    smallBox.addEventListener('click', function () {
+        if (!isMoved) {
+            smallBox.style.backgroundColor = "blue";
+            smallBox.style.transform = "translateX(50px)";
+            containers.style.border = "5px solid blue";
+            title.style.color = "blue";
+            title.innerHTML = "Blue";
+        } else {
+            smallBox.style.backgroundColor = "red";
+            smallBox.style.transform = "translateX(0px)";
+            containers.style.border = "5px solid red";
+            title.style.color = "red";
+            title.innerHTML = "Red";
+        }
+        isMoved = !isMoved;
+    });
+</script>
+
+
+
+</html>
